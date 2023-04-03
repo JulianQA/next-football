@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         "dark-color-container": "#161616",
       },
+      transitionProperty: {
+        "max-height": "max-height",
+      },
     },
   },
   plugins: [],
