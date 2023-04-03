@@ -6,7 +6,7 @@ interface AsideBarProps {
   isOpen: boolean;
   toggle: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const AsideBar = ({ isOpen, toggle }: AsideBarProps) => {
+const AsideBar = ({ isOpen, toggle }: AsideBarProps): JSX.Element => {
   const handleClose = () => {
     toggle(false);
   };
@@ -16,7 +16,7 @@ const AsideBar = ({ isOpen, toggle }: AsideBarProps) => {
         isOpen
           ? "translate-x-0 transition-transform duration-700 ease-in-out"
           : "-translate-x-full transition-transform duration-1000 ease-in-out"
-      } md:block bg-white dark:bg-dark-color-container fixed left-0 top-0 h-screen w-64 p-4`}
+      } lg:translate-x-0 bg-white dark:bg-dark-color-container fixed left-0 top-0 h-screen w-64 p-4`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-purple-700">
@@ -24,7 +24,7 @@ const AsideBar = ({ isOpen, toggle }: AsideBarProps) => {
           <span className="font-bold">NewsFootball</span>
         </div>
         <BiArrowToLeft
-          className="text-purple-700 dark:text-white cursor-pointer"
+          className="text-purple-700 dark:text-white cursor-pointer lg:hidden"
           size={22}
           onClick={handleClose}
         />

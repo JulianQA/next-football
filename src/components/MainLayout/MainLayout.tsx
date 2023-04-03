@@ -3,7 +3,7 @@ import { useState } from "react";
 import AsideBar from "../AsideBar/AsideBar";
 import Header from "../Header/Header";
 
-const MainLayout = () => {
+const MainLayout = (): JSX.Element => {
   const [toggleAsideBar, setToggleAsideBar] = useState<boolean>(false);
   return (
     <div>

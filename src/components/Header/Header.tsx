@@ -7,16 +7,16 @@ interface HeaderProps {
   toggle: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header = ({ isOpen, toggle }: HeaderProps) => {
+const Header = ({ isOpen, toggle }: HeaderProps): JSX.Element => {
   const handleToggle = () => {
     toggle((prev) => !prev);
   };
   return (
-    <header className="fixed flex w-full md:w-[calc(100%_-_16rem)] p-4 items-center justify-between">
+    <header className="fixed flex w-full lg:pl-72 p- p-4 items-center justify-between">
       <BiArrowToRight
         color="white"
         size={20}
-        className="cursor-pointer"
+        className="cursor-pointer lg:hidden"
         onClick={handleToggle}
       />
       <div className="text-white hidden sm:block">
