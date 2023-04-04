@@ -4,7 +4,7 @@ const LoginStatus = () => {
   const logged = true;
   if (logged) {
     return (
-      <div className="text-white flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <Image
           src="https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg"
           alt="Profile Picture"
@@ -17,7 +17,7 @@ const LoginStatus = () => {
     );
   }
   return (
-    <div className="text-white bg-purple-700 px-4 py-2 rounded-full cursor-pointer">
+    <div className="bg-purple-700 px-4 py-2 rounded-full cursor-pointer">
       Login
     </div>
   );

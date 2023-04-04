@@ -19,20 +19,24 @@ const Accordion = ({
     setIsOpen((prev) => !prev);
   };
   return (
-    <div className="text-black dark:text-white overflow-hidden">
-      <div className="flex items-center justify-between mb-4">
+    <div className="overflow-hidden">
+      <div
+        className={`flex items-center p-2 rounded justify-between mb-4 cursor-pointer ${
+          isOpen && "bg-purple-700 text-white"
+        } hover:bg-purple-700 hover:text-white`}
+        onClick={handleToggle}
+      >
         <span className="capitalize">{title}</span>
         <span
           className={`cursor-pointer ${
-            isOpen ? "rotate-90" : "rotate-0"
+            isOpen ? "-rotate-90" : "rotate-90"
           } transition-transform duration-500`}
-          onClick={handleToggle}
         >
           &gt;
         </span>
       </div>
       <div
-        className={`ml-4 border-l border-l-slate-500 pl-4 ${
+        className={`ml-4 border-l border-light-borders dark:border-dark-borders pl-4 ${
           isOpen ? "max-h-44" : "max-h-0"
         } transition-max-height duration-500`}
       >
