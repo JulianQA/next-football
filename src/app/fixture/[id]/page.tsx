@@ -1,3 +1,4 @@
+import Accordion from "@/components/Accordion/Accordion";
 import FixtureResult from "@/components/FixtureResult/FixtureResult";
 import LineUp from "@/components/LineUp/LineUp";
 
@@ -14,8 +15,12 @@ const FixturePage = ({ params: { id } }: FixturePageProps) => {
       <FixtureResult id={id} />
       {/* la alineacion */}
       <div className="grid md:grid-cols-2 gap-2">
-        <LineUp />
-        <LineUp />
+        <div>
+          <Accordion title="LineUp Barcelona" content={<LineUp />} />
+        </div>
+        <div>
+          <Accordion title="LineUp Barcelona" content={<LineUp />} />
+        </div>
       </div>
 
       {/* eventos en vivo */}

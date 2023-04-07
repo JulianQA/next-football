@@ -4,6 +4,7 @@ import { GiSoccerBall } from "react-icons/gi";
 import Accordion from "../Accordion/Accordion";
 import { leagues } from "@/utils/mock/leagues";
 import Link from "next/link";
+import AsideBarContent from "./AsideBarContent";
 
 interface AsideBarProps {
   isOpen: boolean;
@@ -35,7 +36,16 @@ const AsideBar = ({ isOpen, toggle }: AsideBarProps): JSX.Element => {
         />
       </div>
       <section>
-        <Accordion title="leagues" content={leagues} setState={toggle} />
+        <Accordion
+          title="leagues"
+          content={<AsideBarContent />}
+          setState={toggle}
+        />
+        <Accordion
+          title="leagues"
+          content={<AsideBarContent />}
+          setState={toggle}
+        />
       </section>
     </aside>
   );
