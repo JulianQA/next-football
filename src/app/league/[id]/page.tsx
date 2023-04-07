@@ -7,6 +7,7 @@ interface LeaguePageProps {
 }
 const LeaguePage = ({ params: { id } }: LeaguePageProps) => {
   const leagueInfo = leagues.find((item) => item.id.toString() == id);
+  // TODO LeaguePage
   return <main className="text-white">{leagueInfo?.name}</main>;
 };
 
