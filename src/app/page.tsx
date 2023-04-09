@@ -1,15 +1,15 @@
-import MatchPreview from "@/components/MatchPreview/MatchPreview";
+import FixturePreview from "@/components/Fixture/FixturePreview";
 
 function Home() {
   return (
     <main>
       <p className="text-center mb-6 text-2xl">Live Matches</p>
-      <MatchPreview />
-      <MatchPreview />
-      <MatchPreview />
-      <MatchPreview />
-      <MatchPreview />
-      <MatchPreview />
+      <FixturePreview />
+      <FixturePreview />
+      <FixturePreview />
+      <FixturePreview />
+      <FixturePreview />
+      <FixturePreview />
     </main>
   );
 }

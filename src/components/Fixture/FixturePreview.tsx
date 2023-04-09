@@ -1,7 +1,7 @@
 import Link from "next/link";
-import FixtureResult from "../FixtureResult/FixtureResult";
+import FixtureResult from "./FixtureResult";
 
-const MatchPreview = () => {
+const FixturePreview = () => {
   return (
     <article className="w-full sm:w-3/4 mx-auto border bg-white border-light-borders dark:border-dark-borders dark:bg-dark-color-container rounded mb-5">
       <p className="p-4 border-b border-light-borders dark:border-b-dark-borders">
@@ -16,4 +16,4 @@ const MatchPreview = () => {
   );
 };
 
-export default MatchPreview;
+export default FixturePreview;

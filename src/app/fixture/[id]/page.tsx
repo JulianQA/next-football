@@ -1,5 +1,6 @@
 import Accordion from "@/components/Accordion/Accordion";
-import FixtureResult from "@/components/FixtureResult/FixtureResult";
+import FixtureEvents from "@/components/Fixture/FixtureEvents";
+import FixtureResult from "@/components/Fixture/FixtureResult";
 import LineUp from "@/components/LineUp/LineUp";
 
 interface FixturePageProps {
@@ -22,7 +23,7 @@ const FixturePage = ({ params: { id } }: FixturePageProps) => {
           <Accordion title="LineUp Barcelona" content={<LineUp />} />
         </div>
       </div>
-
+      <FixtureEvents homeId="33" awayId="34" />
       {/* eventos en vivo */}
       {/* estadisticas */}
     </main>
