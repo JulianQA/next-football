@@ -7,7 +7,7 @@ async function Home() {
     <main>
       <p className="text-center mb-6 text-2xl">Live Matches</p>
       {response.map((fixture) => (
-        <FixturePreview fixture={fixture} key={fixture.fixture.id} />
+        <FixturePreview fixture={fixture} key={fixture.id} />
       ))}
     </main>
   );

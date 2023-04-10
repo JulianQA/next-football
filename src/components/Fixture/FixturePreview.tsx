@@ -4,7 +4,7 @@ import FixtureResult from "./FixtureResult";
 import Image from "next/image";
 
 interface FixturePreviewProps {
-  fixture: Response;
+  fixture: any;
 }
 const FixturePreview = ({ fixture }: FixturePreviewProps) => {
   return (

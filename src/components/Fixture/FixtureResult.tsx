@@ -3,7 +3,7 @@ import TeamLogo from "../TeamLogo/TeamLogo";
 import { useRouter } from "next/navigation";
 
 interface FixtureResultProps {
-  fixture: Response;
+  fixture: any;
 }
 const FixtureResult = ({ fixture }: FixtureResultProps) => {
   const {
@@ -23,9 +23,14 @@ const FixtureResult = ({ fixture }: FixtureResultProps) => {
     >
       <TeamLogo src={home.logo} teamName={home.name} />
 
-      <div className="bg-light-borders dark:bg-dark-borders px-4 py-1 rounded-full">
-        <span className="text-lg">{`${goals.home} : ${goals.away}`}</span>
-      </div>
+      {typeof goals.home === "number" && typeof goals.away === "number" ? (
+        <div className="bg-light-borders dark:bg-dark-borders px-4 py-1 rounded-full">
+          <span className="text-lg">{`${goals.home} - ${goals.away}`}</span>
+        </div>
+      ) : (
+        <span>-</span>
+      )}
+
       <TeamLogo src={away.logo} teamName={away.name} />
     </div>
   );
