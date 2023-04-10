@@ -7,12 +7,7 @@ interface AccordionProps {
   state?: boolean;
   setState?: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const Accordion = ({
-  title,
-  content,
-  state,
-  setState,
-}: AccordionProps): JSX.Element => {
+const Accordion = ({ title, content }: AccordionProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggle = () => {

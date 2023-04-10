@@ -15,7 +15,7 @@ const FixturePreview = ({ fixture }: FixturePreviewProps) => {
           alt={fixture.league.name}
           width={20}
           height={20}
-          className="w-auto h-auto"
+          className="w-5 h-5 object-contain"
         />
         <Link href={`/league/${fixture.league.id}`}>
           <span className="hover:underline underline-offset-2">
