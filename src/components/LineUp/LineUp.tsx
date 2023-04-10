@@ -1,12 +1,18 @@
 import LineUpPlayer from "./LineUpPlayer";
 import LineUpSection from "./LineUpSection";
 
-const LineUp = () => {
+interface LineUpProps {
+  coach: Coach;
+  starting: { player: Player }[];
+  subs: { player: Player }[];
+}
+
+const LineUp = ({ coach, starting, subs }: LineUpProps) => {
   return (
     <section>
-      <LineUpSection title="Coach" people={[...new Array(1)]} />
-      <LineUpSection title="Starting XI" people={[...new Array(11)]} />
-      <LineUpSection title="Substitutes" people={[...new Array(7)]} />
+      {/* <LineUpSection title="Coach" people={[coach]} /> */}
+      <LineUpSection title="Starting XI" people={starting} />
+      <LineUpSection title="Substitutes" people={subs} />
     </section>
   );
 };

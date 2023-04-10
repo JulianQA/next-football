@@ -22,3 +22,15 @@ interface RootObject {
   response: any[];
   results: number;
 }
+
+interface Coach {
+  id: number;
+  name: string;
+  photo: string;
+}
+interface Player {
+  id: number;
+  name: string;
+  number: number;
+  pos: string;
+}

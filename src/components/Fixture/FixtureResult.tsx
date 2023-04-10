@@ -5,16 +5,18 @@ import { useRouter } from "next/navigation";
 interface FixtureResultProps {
   fixture: any;
 }
-const FixtureResult = ({ fixture }: FixtureResultProps) => {
+const FixtureResult = ({ fixture: response }: FixtureResultProps) => {
   const {
     fixture: { id },
     teams: { home, away },
     goals,
-  } = fixture;
+  } = response;
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/fixture/${id}`);
+    if (id) {
+      router.push(`/fixture/${id}`);
+    }
   };
   return (
     <div
