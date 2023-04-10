@@ -14,9 +14,7 @@ const FixturePage = async ({ params: { id } }: FixturePageProps) => {
   const { response } = await fetchApi("fixtures", `id=${id}`);
   return (
     <main>
-      {/* el escudo de los equipos con le resultado */}
       <FixtureResult fixture={response[0]} />
-      {/* la alineacion */}
       <div className="grid md:grid-cols-2 gap-2">
         {response[0].lineups.map((team: any) => (
           <div key={team.team.id}>
@@ -33,8 +31,11 @@ const FixturePage = async ({ params: { id } }: FixturePageProps) => {
           </div>
         ))}
       </div>
-      <FixtureEvents homeId="33" awayId="34" />
-      {/* eventos en vivo */}
+      <FixtureEvents
+        homeId={response[0].teams.home.id}
+        awayId={response[0].teams.away.id}
+        events={response[0].events}
+      />
       {/* estadisticas */}
     </main>
   );
