@@ -11,13 +11,13 @@ const TeamLogo = ({ src, teamName }: TeamLogoProps) => {
         <Image
           src={src}
           alt={teamName}
-          className="w-10 h-10 object-contain"
+          className="w-6 h-6 sm:w-10 sm:h-10 object-contain"
           width={20}
           height={20}
           title={teamName}
         />
       </figure>
-      <span className="line-clamp-1">{teamName}</span>
+      <span className="line-clamp-1 text-center">{teamName}</span>
     </div>
   );
 };

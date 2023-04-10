@@ -18,14 +18,16 @@ const FixtureResult = ({ fixture }: FixtureResultProps) => {
   };
   return (
     <div
-      className="flex items-center justify-evenly p-4 cursor-pointer"
+      className="flex items-center justify-evenly p-1 sm:p-4 cursor-pointer"
       onClick={handleNavigation}
     >
       <TeamLogo src={home.logo} teamName={home.name} />
 
       {typeof goals.home === "number" && typeof goals.away === "number" ? (
-        <div className="bg-light-borders dark:bg-dark-borders px-4 py-1 rounded-full">
-          <span className="text-lg">{`${goals.home} - ${goals.away}`}</span>
+        <div className="bg-light-borders dark:bg-dark-borders px-2 sm:px-4 py-1 rounded-full sm:text-lg flex">
+          <span>{goals.home}</span>
+          <span>-</span>
+          <span>{goals.away}</span>
         </div>
       ) : (
         <span>-</span>
