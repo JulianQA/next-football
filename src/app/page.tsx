@@ -1,15 +1,14 @@
 import FixturePreview from "@/components/Fixture/FixturePreview";
+import { fetchApi } from "@/utils/api/fetch";
 
-function Home() {
+async function Home() {
+  const { response } = await fetchApi("fixtures", "live=all");
   return (
     <main>
       <p className="text-center mb-6 text-2xl">Live Matches</p>
-      <FixturePreview />
-      <FixturePreview />
-      <FixturePreview />
-      <FixturePreview />
-      <FixturePreview />
-      <FixturePreview />
+      {response.map((fixture) => (
+        <FixturePreview fixture={fixture} key={fixture.fixture.id} />
+      ))}
     </main>
   );
 }

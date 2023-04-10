@@ -41,11 +41,6 @@ const AsideBar = ({ isOpen, toggle }: AsideBarProps): JSX.Element => {
           content={<AsideBarContent />}
           setState={toggle}
         />
-        <Accordion
-          title="leagues"
-          content={<AsideBarContent />}
-          setState={toggle}
-        />
       </section>
     </aside>
   );
