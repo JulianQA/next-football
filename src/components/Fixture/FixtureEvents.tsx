@@ -6,32 +6,14 @@ interface FixtureEventsProps {
   events: any[];
 }
 const FixtureEvents = ({ homeId, awayId, events }: FixtureEventsProps) => {
-  const eventByTeam = (teamId: string) => {
-    return teamId === homeId ? "left-0" : "right-0";
-  };
   return (
-    <section
-      className="relative"
-      style={{ height: `${events.length * 2 + 2}rem` }}
-    >
+    <section className="flex flex-col-reverse gap-2">
       {events.map((item, index) => (
-        <div
-          key={index}
-          style={{
-            bottom: `${index * 2 + (item.type === "subst" ? 1 : 0)}rem`,
-          }}
-        >
-          <FixtureIconEvent
-            eventType={item.type}
-            detail={item.detail}
-            className="absolute left-2/4"
-            style={{ bottom: `${index * 2}rem` }}
-          />
+        <div key={index} className="grid grid-cols-3 items-center p-2">
           <p
-            className={`absolute ${eventByTeam(
-              item.team.id
-            )} flex flex-col text-xs sm:flex-row sm:gap-2 sm:text-base`}
-            style={{ bottom: `${index * 2}rem` }}
+            className={`flex flex-col text-xs sm:flex-row sm:gap-2 sm:text-base ${
+              item.team.id === homeId ? "" : "col-start-3"
+            }`}
           >
             {item.type === "subst" ? (
               <>
@@ -44,6 +26,11 @@ const FixtureEvents = ({ homeId, awayId, events }: FixtureEventsProps) => {
               <span>{item.player.name}</span>
             )}
           </p>
+          <FixtureIconEvent
+            eventType={item.type}
+            detail={item.detail}
+            className="justify-self-center col-start-2 col-end-3 row-start-1 row-end-1"
+          />
         </div>
       ))}
     </section>
