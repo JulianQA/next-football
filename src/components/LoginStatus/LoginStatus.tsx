@@ -12,7 +12,7 @@ const LoginStatus = () => {
           height={100}
           className="rounded-full w-12 h-12"
         />
-        <span>Julian Quintero</span>
+        <span>Jhon Doe</span>
       </div>
     );
   }

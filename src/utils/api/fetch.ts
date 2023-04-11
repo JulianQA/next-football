@@ -11,7 +11,7 @@ export const fetchApi = async (
       "x-rapidapi-host": "v3.football.api-sports.io",
       "x-rapidapi-key": key,
     },
-    // cache: "no-store",
+    cache: "no-store",
   });
   return response.json();
 };

@@ -34,3 +34,19 @@ interface Player {
   number: number;
   pos: string;
 }
+
+interface Statistics {
+  team: Team;
+  statistics: SingleStatistic[];
+}
+
+interface SingleStatistic {
+  type: string;
+  value: number | null | string;
+}
+
+interface Team {
+  id: number;
+  name: string;
+  logo: string;
+}

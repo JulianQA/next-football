@@ -7,20 +7,22 @@ interface FixtureResultProps {
 }
 const FixtureResult = ({ fixture: response }: FixtureResultProps) => {
   const {
-    fixture: { id },
+    fixture: { id, status },
     teams: { home, away },
     goals,
   } = response;
   const router = useRouter();
 
   const handleNavigation = () => {
-    if (id) {
+    if (id && status.short !== "NS") {
       router.push(`/fixture/${id}`);
     }
   };
   return (
     <div
-      className="flex items-center justify-evenly p-1 sm:p-4 cursor-pointer"
+      className={`flex items-center justify-evenly p-1 sm:p-4 mb-5 ${
+        status.short !== "NS" && "cursor-pointer"
+      }`}
       onClick={handleNavigation}
     >
       <TeamLogo src={home.logo} teamName={home.name} />

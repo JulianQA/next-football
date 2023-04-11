@@ -20,7 +20,7 @@ const Header = ({ isOpen, toggle }: HeaderProps): JSX.Element => {
         onClick={handleToggle}
       />
       <div className="hidden sm:block">
-        <p>Welcome, Julian!</p>
+        <p>Welcome, Jhon!</p>
         <span className="text-purple-400 text-sm">Today is football day</span>
       </div>
       <LoginStatus />
